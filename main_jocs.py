@@ -61,7 +61,7 @@ def playGame(whatGame):
         errorsInExecution = 1
     # A la versió 1.0 hauréu de modificar aquest codi afegint alguna cosa
     # similar al que poso a baix
-    # elif whatGame == X:
+    ## elif whatGame == X:
     #    return(s) de la funció = com he anomenat el paquet del joc  .   funció per executar el joc seleccionat ()
     #    errorsInExecution      =                                 g0X.startX 
     else:
