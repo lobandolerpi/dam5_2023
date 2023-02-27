@@ -15,6 +15,7 @@
 import random
 import requests
 import unidecode
+import g01_penjat as penjat
 from collections import defaultdict
 from termcolor import colored
 import f00_functions as f00
@@ -64,7 +65,10 @@ def playGame(whatGame):
     # elif whatGame == X:
     #    return(s) de la funció = com he anomenat el paquet del joc  .   funció per executar el joc seleccionat ()
     #    errorsInExecution      =                                 g0X.startX 
-    else:
+	else if whatGame == 1:
+		errorsInExecution = 1
+		penjat.startAhorcado()    
+	else:
         # Hi ha un error no identificat.
         errorsInExecution = 2
     return errorsInExecution
@@ -79,7 +83,8 @@ def main():
 
     # creo un diccionari amb els jocs instal·lats
     dictGames={
-        0: "Vull deixar de jugar"
+        0: "Vull deixar de jugar",
+	   1: "Penjat"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
     # Creo una llista de missatges per mostrar a la funció
