@@ -17,6 +17,7 @@ import requests
 import unidecode
 from collections import defaultdict
 from termcolor import colored
+from g08_blackjack import *
 import f00_functions as f00
 import f01_data_base as fdb
 import g02_wordle
@@ -67,6 +68,8 @@ def playGame(whatGame):
     # elif whatGame == X:
     #    return(s) de la funció = com he anomenat el paquet del joc  .   funció per executar el joc seleccionat ()
     #    errorsInExecution      =                                 g0X.startX 
+    elif whatGame == 1:
+        startBlackjack()
     else:
         # Hi ha un error no identificat.
         errorsInExecution = 2
@@ -83,7 +86,7 @@ def main():
     # creo un diccionari amb els jocs instal·lats
     dictGames={
         0: "Vull deixar de jugar",
-
+        1: "blackjack",
         2: "joc wordle"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
