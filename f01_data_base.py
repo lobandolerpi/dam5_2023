@@ -1,3 +1,4 @@
+d
 # This file is part of jocsCalamot by Pedro Bonilla.
 #
 # jocsCalamot is free software: you can redistribute it and/or modify
