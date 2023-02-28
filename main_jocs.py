@@ -14,11 +14,12 @@
 
 import random
 import requests
-import unidecode
 from collections import defaultdict
-from termcolor import colored
 import f00_functions as f00
 import f01_data_base as fdb
+import g06_buscamines as g06
+import unidecode
+from termcolor import colored
 # Versió 1.0 cal importar el teu fitxer de jocs
 
 # Aquesta funció, demana a l'usuari un sencer per triar jocs
@@ -61,9 +62,8 @@ def playGame(whatGame):
         errorsInExecution = 1
     # A la versió 1.0 hauréu de modificar aquest codi afegint alguna cosa
     # similar al que poso a baix
-    # elif whatGame == X:
-    #    return(s) de la funció = com he anomenat el paquet del joc  .   funció per executar el joc seleccionat ()
-    #    errorsInExecution      =                                 g0X.startX 
+    elif whatGame == 6:
+       errorsInExecution = g06.startBuscamines()
     else:
         # Hi ha un error no identificat.
         errorsInExecution = 2
@@ -79,7 +79,8 @@ def main():
 
     # creo un diccionari amb els jocs instal·lats
     dictGames={
-        0: "Vull deixar de jugar"
+        0: "Vull deixar de jugar",
+        6: "Vull jugar al Buscaminas"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
     # Creo una llista de missatges per mostrar a la funció

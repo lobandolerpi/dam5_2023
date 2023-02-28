@@ -8,14 +8,14 @@
 
 import random
 import requests
-import unidecode
-from termcolor import colored
 from collections import defaultdict
 import f00_functions as f00
+import unidecode
+from termcolor import colored
 
 NUM_MINES = 3
 global dictRows
-dictRows={0:"A", 1:"B", 2:"C", 3:"D", 4:"E", 5:"G"}
+dictRows={0:"A", 1:"B", 2:"C", 3:"D", 4:"E", 5:"F"}
 MINA = "*"
 ESPACIO_SIN_ABRIR = "."
 ESPACIO_ABIERTO = "-"
@@ -278,4 +278,4 @@ def startBuscamines():
 
 # Aquesta línia és només per comprobar que el programa et funciona sense el main
 # Ja per la versió 1.0 hauries de comentar-la i passar-la al codi principal d'alguna manera
-startBuscamines()
+#startBuscamines()
