@@ -25,6 +25,7 @@ import g03_ppt as g03
 import g04_parells_senars as g04
 import g06_buscamines as g06
 import g07_3ratlla as g07
+import g08_blackjack as g08
 
 
 # Versió 1.0 cal importar el teu fitxer de jocs
@@ -68,6 +69,8 @@ def playGame(whatGame):
     if whatGame == 0:
         # en veritat això no es un error, sino el codi d'error per sortir
         errorsInExecution = 1
+    elif whatGame == 8:
+        errorsInExecution = g08.startBlackjack()
     elif whatGame == 7:
         errorsInExecution = g07.start3EnRatlla()
     elif whatGame == 6:
@@ -107,7 +110,8 @@ def main():
         4: "Parells i Senars",
         6: "Vull jugar al Buscaminas",
 
-        7: "Joc 3Ratlla"
+        7: "Joc 3Ratlla",
+        8: "blackjack"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
     # Creo una llista de missatges per mostrar a la funció
