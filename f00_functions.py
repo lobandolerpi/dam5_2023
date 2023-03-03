@@ -120,4 +120,8 @@ def generateSpanishWordNormalised(numberOfLetters):
             # Si no té ñ la vull. Elimino els accents i diéresi.
             wordOk = unidecode.unidecode(wordTmp)
             # I surto de la funció tornant la paraula.
+<<<<<<< HEAD
             return wordOk
+=======
+            return wordOk
+>>>>>>> 0d9d13b1ad4bd29c851abd4509d72141bfe423c1

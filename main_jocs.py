@@ -23,11 +23,11 @@ import g01_penjat as g01
 import g02_wordle as g02
 import g03_ppt as g03
 import g04_parells_senars as g04
+# JOC 5 FALTA PUJAR
 import g06_buscamines as g06
 import g07_3ratlla as g07
 import g08_blackjack as g08
-
-
+import g09_anagrama as g09
 # Versió 1.0 cal importar el teu fitxer de jocs
 
 # Aquesta funció, demana a l'usuari un sencer per triar jocs
@@ -69,6 +69,8 @@ def playGame(whatGame):
     if whatGame == 0:
         # en veritat això no es un error, sino el codi d'error per sortir
         errorsInExecution = 1
+    elif whatGame == 9:
+        errorsInExecution = g09.startAnagrames()
     elif whatGame == 8:
         errorsInExecution = g08.startBlackjack()
     elif whatGame == 7:
@@ -81,14 +83,13 @@ def playGame(whatGame):
         errorsInExecution = g03.startPPT() # Ejecuto el Juego
     elif whatGame == 2:
         errorsInExecution = g02.startWordle()
-
+    elif whatGame == 1:
+        errorsInExecution = g01.startAhorcado()
     # A la versió 1.0 hauréu de modificar aquest codi afegint alguna cosa
     # similar al que poso a baix
     # elif whatGame == X:
     #    return(s) de la funció = com he anomenat el paquet del joc  .   funció per executar el joc seleccionat ()
     #    errorsInExecution      =                                 g0X.startX
-    elif whatGame == 1:
-        errorsInExecution = g01.startAhorcado()
     else:
         # Hi ha un error no identificat.
         errorsInExecution = 2
@@ -105,13 +106,13 @@ def main():
     dictGames = {
         0: "Vull deixar de jugar",
         1: "Penjat",
-        2: "joc wordle",
+        2: "Wordle",
         3: "Pedra, Paper, Tissora",
         4: "Parells i Senars",
-        6: "Vull jugar al Buscaminas",
-
-        7: "Joc 3Ratlla",
-        8: "blackjack"
+        6: "Buscamin3s",
+        7: "Tres en ratlla",
+        8: "Blackjack (o 21)",
+        9: "Anagrama"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
     # Creo una llista de missatges per mostrar a la funció
