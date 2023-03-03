@@ -19,6 +19,7 @@ import unidecode
 from termcolor import colored
 # constants del main
 abcd = 'abcdefghijklmnopqrstuvwxyz'
+aA1 ='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 
 # Funció per demanar un input amb condicions
 def chooseLetterMsg(*args):
