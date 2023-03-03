@@ -96,11 +96,13 @@ def playGame(whatGame):
     return errorsInExecution
 
 def main():
-    # A la versió 2.0 aquí anirà la selecció de jugador i
+     # A la versió 2.0 aquí anirà la selecció de jugador i 
     # consulta a la base de dades (Ho farà el professor)
-    fdb.tmpMsgDB()  # Comprobació que la base de dades
+    BdD = fdb.loadPlayersDB(fdb.pathDB)  # Carrego la Base de dades
+    BdD, indU = fdb.whoPlays(BdD) # Pregunto qui jugarà
+    player = BdD['username'][indU] # Extrec la info del player de la BdD a una variable
     print()
-    print('Benvigut a JOCS CALAMOT')
+    print(player + ', benvigut a JOCS CALAMOT') # Saludo
 
     # creo un diccionari amb els jocs instal·lats
     dictGames = {
@@ -128,7 +130,7 @@ def main():
         numGame = chooseIntegerDictionaryMessages(dictGames, listMsg2User)
         # A jugar una partida!
         # A la versió 2.0 el playGame hauria de acceptar el paràmetre recollir el jugador
-        whatToDoNext = playGame(numGame)
+        whatToDoNext = playGame(numGame, player)
         # I tornar si s'ha guanyat o perdut.
 
         # A la versió 2.0 aquí anirà l'actualització de les victòries del jugador a la base de dades
