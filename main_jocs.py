@@ -63,29 +63,28 @@ def chooseIntegerDictionaryMessages(dictIn, listStrMsg):
 
 # Aquesta funció només executa la funció del correcte.
 # Depeent del paràmetre. L'haureu de tocar a la Versio 1.0
-def playGame(whatGame, player):
+def playGame(whatGame):
     # Si no pasa res torno un 0. El programa continua normal
     errorsInExecution = 0
-    victory = False
     if whatGame == 0:
         # en veritat això no es un error, sino el codi d'error per sortir
         errorsInExecution = 1
     elif whatGame == 9:
-        errorsInExecution, victory = g09.startAnagrames(player)
+        errorsInExecution = g09.startAnagrames()
     elif whatGame == 8:
-        errorsInExecution, victory = g08.startBlackjack(player)
+        errorsInExecution = g08.startBlackjack()
     elif whatGame == 7:
-        errorsInExecution, victory = g07.start3EnRatlla(player)
+        errorsInExecution = g07.start3EnRatlla()
     elif whatGame == 6:
-       errorsInExecution, victory = g06.startBuscamines(player)
+       errorsInExecution = g06.startBuscamines()
     elif whatGame == 4:
-        errorsInExecution, victory = g04.startParellsSenars(player)
+        errorsInExecution = g04.startParellsSenars()
     elif (whatGame == 3): #Si el userInput == 3:
-        errorsInExecution, victory = g03.startPPT(player) # Ejecuto el Juego
+        errorsInExecution = g03.startPPT() # Ejecuto el Juego
     elif whatGame == 2:
-        errorsInExecution, victory = g02.startWordle(player)
+        errorsInExecution = g02.startWordle()
     elif whatGame == 1:
-        errorsInExecution, victory = g01.startAhorcado(player)
+        errorsInExecution = g01.startAhorcado()
     # A la versió 1.0 hauréu de modificar aquest codi afegint alguna cosa
     # similar al que poso a baix
     # elif whatGame == X:
@@ -94,16 +93,14 @@ def playGame(whatGame, player):
     else:
         # Hi ha un error no identificat.
         errorsInExecution = 2
-    return errorsInExecution, victory
+    return errorsInExecution
 
 def main():
-     # A la versió 2.0 aquí anirà la selecció de jugador i 
+    # A la versió 2.0 aquí anirà la selecció de jugador i
     # consulta a la base de dades (Ho farà el professor)
-    BdD = fdb.loadPlayersDB(fdb.pathDB)  # Carrego la Base de dades
-    BdD, indU = fdb.whoPlays(BdD) # Pregunto qui jugarà
-    player = BdD['username'][indU] # Extrec la info del player de la BdD a una variable
+    fdb.tmpMsgDB()  # Comprobació que la base de dades
     print()
-    print(player + ', benvigut a JOCS CALAMOT') # Saludo
+    print('Benvigut a JOCS CALAMOT')
 
     # creo un diccionari amb els jocs instal·lats
     dictGames = {
@@ -131,13 +128,13 @@ def main():
         numGame = chooseIntegerDictionaryMessages(dictGames, listMsg2User)
         # A jugar una partida!
         # A la versió 2.0 el playGame hauria de acceptar el paràmetre recollir el jugador
-        whatToDoNext, victory = playGame(numGame, player)
+        whatToDoNext = playGame(numGame)
         # I tornar si s'ha guanyat o perdut.
-        BdD = fdb.updateVictories(indU, BdD, victory)
+
         # A la versió 2.0 aquí anirà l'actualització de les victòries del jugador a la base de dades
         # Ho farà el professor, però necessitarà una variable que ha d'extreure playGame
         # I per tant el teu joc, l'haurà de subministrar.
-        fdb.writePlayersDB(BdD, fdb.pathDB)
+
         # Que fer després de jugar. Si hi ha un error al joc s'hauria de tractar aquí.
 
         if whatToDoNext == 2:
