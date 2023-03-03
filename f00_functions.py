@@ -14,10 +14,9 @@
 
 import random
 import requests
-import unidecode
 from collections import defaultdict
+import unidecode
 from termcolor import colored
-
 # constants del main
 abcd = 'abcdefghijklmnopqrstuvwxyz'
 

@@ -14,9 +14,9 @@
 
 import random
 import requests
-import unidecode
 import os
 from collections import defaultdict
+import unidecode
 from termcolor import colored
 
 # De moment, per la versió 0.0 aquest fitxer no fa res.

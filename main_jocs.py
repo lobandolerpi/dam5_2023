@@ -23,6 +23,7 @@ import g01_penjat as g01
 import g02_wordle as g02
 import g03_ppt as g03
 import g04_parells_senars as g04
+import g06_buscamines as g06
 # Versió 1.0 cal importar el teu fitxer de jocs
 
 # Aquesta funció, demana a l'usuari un sencer per triar jocs
@@ -63,6 +64,8 @@ def playGame(whatGame):
     if whatGame == 0:
         # en veritat això no es un error, sino el codi d'error per sortir
         errorsInExecution = 1
+    elif whatGame == 6:
+       errorsInExecution = g06.startBuscamines()
     elif whatGame == 4:
         errorsInExecution = g04.startParellsSenars()
     elif (whatGame == 3): #Si el userInput == 3:
@@ -94,7 +97,8 @@ def main():
         1: "Penjat",
         2: "joc wordle",
         3: "Pedra, Paper, Tissora",
-        4: "Parells i Senars"
+        4: "Parells i Senars",
+        6: "Vull jugar al Buscaminas"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
     # Creo una llista de missatges per mostrar a la funció
