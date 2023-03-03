@@ -20,7 +20,7 @@ from termcolor import colored
 import f00_functions as f00
 import f01_data_base as fdb
 import g01_penjat as g01
-import g02_wordle
+import g02_wordle as g02
 # Versió 1.0 cal importar el teu fitxer de jocs
 
 # Aquesta funció, demana a l'usuari un sencer per triar jocs
@@ -62,7 +62,7 @@ def playGame(whatGame):
         # en veritat això no es un error, sino el codi d'error per sortir
         errorsInExecution = 1
     elif whatGame == 2:
-        g02_wordle.startWordle()
+        errorsInExecution = g02.startWordle()
     # A la versió 1.0 hauréu de modificar aquest codi afegint alguna cosa
     # similar al que poso a baix
     # elif whatGame == X:
