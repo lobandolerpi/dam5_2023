@@ -21,6 +21,7 @@ import f00_functions as f00
 import f01_data_base as fdb
 import g01_penjat as g01
 import g02_wordle as g02
+import g03_ppt as g03
 # Versió 1.0 cal importar el teu fitxer de jocs
 
 # Aquesta funció, demana a l'usuari un sencer per triar jocs
@@ -61,6 +62,8 @@ def playGame(whatGame):
     if whatGame == 0:
         # en veritat això no es un error, sino el codi d'error per sortir
         errorsInExecution = 1
+    elif (whatGame == 3): #Si el userInput == 3:
+        errorsInExecution = g03.startPPT() # Ejecuto el Juego
     elif whatGame == 2:
         errorsInExecution = g02.startWordle()
     # A la versió 1.0 hauréu de modificar aquest codi afegint alguna cosa
@@ -86,7 +89,8 @@ def main():
     dictGames={
         0: "Vull deixar de jugar",
         1: "Penjat",
-        2: "joc wordle"
+        2: "joc wordle",
+        3: "Pedra, Paper, Tissora"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
     # Creo una llista de missatges per mostrar a la funció
