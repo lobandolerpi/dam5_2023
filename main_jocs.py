@@ -109,7 +109,7 @@ def main():
         2: "Wordle",
         3: "Pedra, Paper, Tissora",
         4: "Parells i Senars",
-        6: "Buscamin3s",
+        6: "Buscamines",
         7: "Tres en ratlla",
         8: "Blackjack (o 21)",
         9: "Anagrama"

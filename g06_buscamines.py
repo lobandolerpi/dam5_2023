@@ -132,7 +132,7 @@ def obtener_minas_cercanas(fila, columna):
     return str(conteo)
 
 
-def imprimir_tablero():
+def imprimir_tablero(HA_PERDIDO, HA_GANADO):
     print("")
     ultima_casilla = False
     # Imprimir esquina superior izquierda
@@ -169,15 +169,15 @@ def imprimir_tablero():
         print("PERDISTE")
 
 
-def abrir_casilla(coordenadas):
-    global HA_GANADO, HA_PERDIDO, tablero
+def abrir_casilla(coordenadas, HA_PERDIDO, HA_GANADO):
+    global tablero
     fila, columna = obtener_indices_a_partir_de_coordenadas(coordenadas)
     # Qué había en la casilla?
     elemento_actual = tablero[fila][columna]
     # Si hay una mina, pierde y ya no se modifica nada
     if elemento_actual == MINA:
         HA_PERDIDO = True
-        return
+        return HA_PERDIDO, HA_GANADO
 
     # Si es un elemento sin abrir, lo abre
     if elemento_actual == ESPACIO_SIN_ABRIR:
@@ -185,6 +185,8 @@ def abrir_casilla(coordenadas):
     # Comprobamos si hay casillas sin abrir
     if no_hay_casillas_sin_abrir():
         HA_GANADO = True
+
+    return HA_PERDIDO, HA_GANADO
 
 
 def no_hay_casillas_sin_abrir():
@@ -259,12 +261,14 @@ def startBuscamines():
     #coordenadas = solicitar_coordenadas()
     listMines = create_random_board(NUM_MINES,FILAS,COLUMNAS)
     #iniciar_tablero_con_string(coordenadas )
-    startBoardListLists(listMines)
-    imprimir_tablero()
+    startBoardListLists(listMines)  
+    HA_PERDIDO = False
+    HA_GANADO = False
+    imprimir_tablero(HA_PERDIDO , HA_GANADO )
     while not HA_PERDIDO and not HA_GANADO:
         casilla = solicitar_casilla()
-        abrir_casilla(casilla)
-        imprimir_tablero()
+        HA_PERDIDO, HA_GANADO = abrir_casilla(casilla, HA_PERDIDO, HA_GANADO)
+        imprimir_tablero(HA_PERDIDO, HA_GANADO)
     # Per consistencia amb els jocs i el que demanaré a la versió 2
     # omplo winner en funció de si ha guanyat o perdut.
     if HA_GANADO:
