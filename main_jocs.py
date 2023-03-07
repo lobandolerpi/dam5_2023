@@ -15,11 +15,12 @@
 import random
 import requests
 import unidecode
-import g01_penjat as penjat
 from collections import defaultdict
 from termcolor import colored
 import f00_functions as f00
 import f01_data_base as fdb
+import g01_penjat as g01
+import g02_wordle
 # Versió 1.0 cal importar el teu fitxer de jocs
 
 # Aquesta funció, demana a l'usuari un sencer per triar jocs
@@ -60,19 +61,19 @@ def playGame(whatGame):
     if whatGame == 0:
         # en veritat això no es un error, sino el codi d'error per sortir
         errorsInExecution = 1
+    elif whatGame == 2:
+        g02_wordle.startWordle()
     # A la versió 1.0 hauréu de modificar aquest codi afegint alguna cosa
     # similar al que poso a baix
     # elif whatGame == X:
     #    return(s) de la funció = com he anomenat el paquet del joc  .   funció per executar el joc seleccionat ()
-    #    errorsInExecution      =                                 g0X.startX 
-	else if whatGame == 1:
-		errorsInExecution = 1
-		penjat.startAhorcado()    
-	else:
+    #    errorsInExecution      =                                 g0X.startX
+    elif whatGame == 1:
+        errorsInExecution = g01.startAhorcado()
+    else:
         # Hi ha un error no identificat.
         errorsInExecution = 2
     return errorsInExecution
-
 
 def main():
     # A la versió 2.0 aquí anirà la selecció de jugador i 
@@ -84,7 +85,8 @@ def main():
     # creo un diccionari amb els jocs instal·lats
     dictGames={
         0: "Vull deixar de jugar",
-	   1: "Penjat"
+        1: "Penjat",
+        2: "joc wordle"
     }
     # A la versió 1.0 has d'afegir aquó el nom del teu joc.
     # Creo una llista de missatges per mostrar a la funció
@@ -110,6 +112,7 @@ def main():
 
 
         # Que fer després de jugar. Si hi ha un error al joc s'hauria de tractar aquí.
+
         if whatToDoNext == 2:
             print("Hi ha hagut un error al joc, tornant al menu de selecció...")
             whatToDoNext = 0
