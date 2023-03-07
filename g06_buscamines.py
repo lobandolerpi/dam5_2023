@@ -241,12 +241,11 @@ def solicitar_casilla():
             continue
         return casilla
 
-
-def startBuscamines():
+    #Hemos puesto que la funcion "startBuscamines" recoge una el nombre de un jugador.
+def startBuscamines(player):
     # Joc del Buscamines
     # Defineixo un nom provisional pel jugador,
     # Després quan vingui la versió 2.0 s'haureu de canviar com es defineix player
-    player = "Jugador" 
     print('\n Benvingut ' + player + '!!! \n Juguem al Buscamines')
     print('Al tauler s\'amagen ' + str(NUM_MINES) + ' mines')
     print('El jugador ha d\'anar seleccionant caselles a alliberar')
@@ -276,7 +275,8 @@ def startBuscamines():
     else:
         winner = False
     f00.messageEnd(winner, player)
-    return errorsInExecution
+    return errorsInExecution,winner
+    # Hemos añadido al return el winner.
     # Quan vingui la versió 2.0 aquí haureu d'afegir més coses al return
 
 
