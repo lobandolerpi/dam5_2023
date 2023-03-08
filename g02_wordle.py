@@ -108,7 +108,7 @@ def startWordle(jugador):
     # Joc del Penjat en castellà
     # Defineixo un nom provisional pel jugador,
     # Després quan vingui la versió 2.0 s'haureu de canviar com es defineix player
-    player = jugador
+    player = jugador # OK, pero innecessari
     # Variable a tornar per que el main general sàpiga que fer
     errorsInExecution = 0
     # Inicialitzo el llistat de lletres usades correctes i incorrectes
