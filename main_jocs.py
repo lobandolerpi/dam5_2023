@@ -137,7 +137,7 @@ def main():
         # A la versió 2.0 aquí anirà l'actualització de les victòries del jugador a la base de dades
         # Ho farà el professor, però necessitarà una variable que ha d'extreure playGame
         # I per tant el teu joc, l'haurà de subministrar.
-        fdb.writePlayersDB(BdD, fdb.pathDB)
+        #fdb.writePlayersDB(BdD, fdb.pathDB)
         # Que fer després de jugar. Si hi ha un error al joc s'hauria de tractar aquí.
 
         if whatToDoNext == 2:
