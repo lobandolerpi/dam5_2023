@@ -23,7 +23,7 @@ import g01_penjat as g01
 import g02_wordle as g02
 import g03_ppt as g03
 import g04_parells_senars as g04
-# JOC 5 FALTA PUJAR
+import g05_chinos as g05
 import g06_buscamines as g06
 import g07_3ratlla as g07
 import g08_blackjack as g08
@@ -78,6 +78,8 @@ def playGame(whatGame, player):
         errorsInExecution, victory = g07.start3EnRatlla(player)
     elif whatGame == 6:
        errorsInExecution, victory = g06.startBuscamines(player)
+    elif whatGame == 5:
+       errorsInExecution, victory = g05.startChinos(player)
     elif whatGame == 4:
         errorsInExecution, victory = g04.startParellsSenars(player)
     elif (whatGame == 3): #Si el userInput == 3:
@@ -112,6 +114,7 @@ def main():
         2: "Wordle",
         3: "Pedra, Paper, Tissora",
         4: "Parells i Senars",
+        5: "Chinos",
         6: "Buscamines",
         7: "Tres en ratlla",
         8: "Blackjack (o 21)",
