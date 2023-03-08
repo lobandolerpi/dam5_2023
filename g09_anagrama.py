@@ -99,11 +99,11 @@ def checkListColors(argIn, lenW, lenPrints, defColor):
         listOut = [defColor]*lenW # en cas contrari tot blanc    
     return listOut
 
-def startAnagrames():
+def startAnagrames(jugador):
     # Joc dels anagrames en castellà
     # Defineixo un nom provisional pel jugador,
     # Després quan vingui la versió 2.0 s'haureu de canviar com es defineix player
-    player = "Jugador"
+    player = jugador
     # Variable a tornar per que el main general sàpiga que fer
     errorsInExecution = 0
     # Imposo que la paraula tingui entre 6 i 9 lletres.
@@ -141,7 +141,7 @@ def startAnagrames():
     f00.messageEnd(winner, player)
     print("La paraula era : ")
     printWordSigns(wordObjective, "[","]","green","on_white")
-    return errorsInExecution
+    return errorsInExecution, winner
     # Quan vingui la versió 2.0 aquí haureu d'afegir més coses
 
 # Aquesta línia és només per comprobar que el programa et funciona
