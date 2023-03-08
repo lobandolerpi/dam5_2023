@@ -159,11 +159,11 @@ def CPUTurn(playerHand, CPUHand):
         CPUTotal = getHandValue(CPUHand)
     return CPUHand, CPUTotal
 
-def startBlackjack():
+def startBlackjack(player):
     # Joc del BlackJack
     # Defineixo un nom provisional pel jugador,
     # Després quan vingui la versió 2.0 s'haureu de canviar com es defineix player
-    player = "Jugador"
+    # player = "Jugador"
     # Variable a tornar per que el main general sàpiga que fer
     errorsInExecution = 0
     # Missatge Benviguda
@@ -223,4 +223,4 @@ def startBlackjack():
             print('Heu empatat')
             tie = True
     f00.messageEnd(winner, player)
-    return errorsInExecution
+    return errorsInExecution, winner
